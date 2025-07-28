@@ -45,3 +45,19 @@ function mostrarAmigos(amigos) {
         console.log("Desplegando a: " +amigos[i]);
     }
 }
+/*
+**Sorteo aleatorio:** Al hacer clic en el botón **"Sortear Amigo"**, 
+se seleccionará aleatoriamente un nombre de la lista y se mostrará en la página.
+*/
+
+function sortearAmigo() {
+    if (amigos.length === 0) {
+        alert("Por favor, agregue al menos un amigo primero.");
+        return;
+    }
+    let indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    let amigoSeleccionado = amigos[indiceAleatorio];
+    
+    // Mostrar resultado
+    alert("El amigo seleccionado es: " + amigoSeleccionado);
+}
