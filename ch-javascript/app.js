@@ -59,5 +59,9 @@ function sortearAmigo() {
     let amigoSeleccionado = amigos[indiceAleatorio];
     
     // Mostrar resultado
-    alert("El amigo seleccionado es: " + amigoSeleccionado);
+    console.log("El amigo seleccionado es: " + amigoSeleccionado);
+
+    // Mostrar resultado
+    document.getElementById("resultado").textContent = 
+        "El amigo seleccionado es: " + amigoSeleccionado;
 }
