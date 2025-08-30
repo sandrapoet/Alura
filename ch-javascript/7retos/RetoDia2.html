@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendizaje de Lenguajes</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus {
+            border-color: #6e8efb;
+            outline: none;
+        }
+        
+        button {
+            background: linear-gradient(to right, #6e8efb, #a777e3);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 14px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .message {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+        
+        .options {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .option-btn {
+            width: 80px;
+        }
+        
+        .success {
+            color: #28a745;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        
+        .encouragement {
+            color: #6c757d;
+            font-style: italic;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Cuéntanos sobre tu aprendizaje!</h1>
+        
+        <form id="infoForm">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" min="1" max="120" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="lenguaje">Lenguaje de programación:</label>
+                <input type="text" id="lenguaje" required>
+            </div>
+            
+            <button type="submit">Enviar información</button>
+        </form>
+        
+        <div id="messageContainer" class="message">
+            <p id="mainMessage"></p>
+            <p id="question" style="margin-top: 15px; font-weight: bold;"></p>
+            <div class="options">
+                <button id="btnSi" class="option-btn">SÍ</button>
+                <button id="btnNo" class="option-btn">NO</button>
+            </div>
+            <p id="responseMessage"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('infoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Obtener valores del formulario
+            const nombre = document.getElementById('nombre').value;
+            const edad = document.getElementById('edad').value;
+            const lenguaje = document.getElementById('lenguaje').value;
+            
+            // Mostrar mensaje principal
+            document.getElementById('mainMessage').textContent = 
+                `¡Hola ${nombre}, tienes ${edad} años y ya estás aprendiendo ${lenguaje}!`;
+            
+            // Mostrar pregunta
+            document.getElementById('question').textContent = 
+                `¿Te gusta estudiar ${lenguaje}?`;
+            
+            // Mostrar contenedor de mensaje
+            document.getElementById('messageContainer').style.display = 'block';
+            
+            // Configurar eventos para los botones de respuesta
+            document.getElementById('btnSi').addEventListener('click', function() {
+                document.getElementById('responseMessage').innerHTML = 
+                    '<span class="success">¡Muy bien! Sigue estudiando y tendrás mucho éxito.</span>';
+            });
+            
+            document.getElementById('btnNo').addEventListener('click', function() {
+                document.getElementById('responseMessage').innerHTML = 
+                    '<span class="encouragement">Oh, qué pena... ¿Ya intentaste aprender otros lenguajes?</span>';
+            });
+        });
+    </script>
+</body>
+</html>
