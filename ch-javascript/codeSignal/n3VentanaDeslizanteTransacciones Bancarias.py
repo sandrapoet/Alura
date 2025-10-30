@@ -1,10 +1,5 @@
 """
 ## 🧩 **Módulo 3 - Implementation Efficiency**
-
-### 📋 **Características del módulo:**
-- **Tiempo estimado:** 20 minutos
-- **Líneas de código esperadas:** 25-40
-- **Enfoque:** Implementar soluciones eficientes que cumplan límites de tiempo
 - **Puede incluir:** 
   - Arrays multidimensionales
   - Hashmaps/diccionarios para optimización
@@ -22,7 +17,6 @@ Tienes una lista de transacciones bancarias donde cada transacción es un string
 - `tipo`: "DEPOSITO" o "RETIRO"
 
 **Tu tarea:** Encontrar **todos los clientes sospechosos** basado en estas reglas:
-
 1. **Regla de Monto Grande:** Cualquier transacción ≥ 10,000
 2. **Regla de Frecuencia:** Más de 5 transacciones en un mismo día
 3. **Regla de Secuencia Rápida:** 3 o más transacciones consecutivas dentro de 10 minutos (mismo cliente)
