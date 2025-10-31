@@ -38,8 +38,8 @@ def find_two_sum_indices(arr, target):
 
 print(find_two_sum_indices([-2, 1, 3, 5, 8], 6))  # (1, 3)
 
-def find_all_two_sum(arr, target):
     """Encuentra TODOS los pares que suman target."""
+def find_all_two_sum(arr, target):
     left, right = 0, len(arr) - 1
     pairs = []
     
